@@ -8,21 +8,21 @@ using Accord.Statistics.Models.Markov;
 namespace ModelLearning {
     class Program {
         static void Main(string[] args) {
-            double threshold = 0.001;
-            int max_states = 20;
-            List<Learner> learners = new List<Learner>() { 
-                new Learners.KentManfredLearner(max_states, threshold),
-                new Learners.BaumWelchLearner(max_states, threshold),
-                new Learners.SparseBaumWelchLearner(max_states, threshold),
-                new Learners.StrictJaegerLearner(max_states, threshold),
-                new Learners.JaegerLearner(max_states, threshold, 0.95)
-            };
+//            double threshold = 0.001;
+//            int max_states = 20;
+//            List<Learner> learners = new List<Learner>() { 
+//                new Learners.KentManfredLearner(max_states, threshold),
+//                new Learners.BaumWelchLearner(max_states, threshold),
+//                new Learners.SparseBaumWelchLearner(max_states, threshold),
+//                new Learners.StrictJaegerLearner(max_states, threshold),
+//                new Learners.JaegerLearner(max_states, threshold, 0.95)
+//            };
 
             //Console.WriteLine("Select Dataset:");
 			//BWBenchmarker benchmarker = new BWBenchmarker(Int32.Parse(Console.ReadLine()));
 
 			//hardcoded datasets to be run
-			int[] datasetarray = new int[6] {38, 28, 23, 25, 16, 1};
+			int[] datasetarray = new int[] {1, 6, 23, 41, 36, 8, 43, 37, 32, 10, 35};
 
 			Console.WriteLine("Number of Runs:");
 			int numberOfRuns = Int32.Parse(Console.ReadLine());

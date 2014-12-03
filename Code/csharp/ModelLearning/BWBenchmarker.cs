@@ -56,6 +56,13 @@ namespace ModelLearning
                     csvSW.WriteLine("Dataset,Model_States,Score,Time,");
                     csvSW.Flush();
                     
+					int datasetlog = 0; 
+					int statelog = 0;
+					double scoresum = 0;
+					double timesum = 0;
+
+
+
                     for (int n = nMin; n <= nMax; n += stepSize)
                     {
                         Console.WriteLine("{0} states...", n);
@@ -74,9 +81,13 @@ namespace ModelLearning
 
                         for (int i = 0; i < numberOfRuns; i++)
                         {
-                            csvSW.WriteLine("{0},{1},{2},{3}", dataset, n, runScores[n][i], runTimes[n][i]);
+							datasetlog = dataset;
+							statelog = n;
+							scoresum =+ runScores[n][i];
+							timesum =+ runTimes[n][i];
                             sw.WriteLine("Run {0:00}:\t{1:0000.0000000000}\t{2:000000}\t{3:0000000000000000}", i, runScores[n][i], runTimes[n][i], runTicks[n][i]);
                         }
+						csvSW.WriteLine("{0},{1},{2},{3}", datasetlog, statelog, scoresum/numberOfRuns, timesum/numberOfRuns);
 
                         sw.WriteLine();
                         sw.Flush();
