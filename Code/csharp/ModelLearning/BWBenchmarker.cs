@@ -88,12 +88,12 @@ namespace ModelLearning
                             sw.WriteLine("Run {0:00}:\t{1:0000.0000000000}\t{2:000000}\t{3:0000000000000000}", i, runScores[n][i], runTimes[n][i], runTicks[n][i]);
                         }
 						csvSW.WriteLine("{0},{1},{2},{3}", datasetlog, statelog, scoresum/numberOfRuns, timesum/numberOfRuns);
+						csvSW.Flush();
 
                         sw.WriteLine();
                         sw.Flush();
 
-                        csvSW.WriteLine();
-                        csvSW.Flush();
+    
                     }
 
                     sw.WriteLine("##########");
